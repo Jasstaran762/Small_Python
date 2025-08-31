@@ -1,0 +1,29 @@
+arr=input("arr2: ")
+arr2 = list(map(int, arr))
+dc=len(arr2)
+
+print("Total Digits are:",dc)
+
+#lines below are used for colouring the addition(+) op. and equalto(=).you can simply change it.
+
+PLUS = "\033[1;31m+\033[0m" 
+EQUAL = "\033[1;34m=\033[0m"
+
+res=0
+dv=""
+
+for i in range(len(arr2)):
+    res += (arr2[i]**dc)
+    dv += f"{arr2[i]}^{dc}"
+    if i<len(arr2)-1:
+        dv +=f" {PLUS} "
+
+dv+=(f" {EQUAL} {res}")
+
+print(dv)
+if res==int(arr):
+    print("\033[1;32mTRUE!\033[0m")
+
+else:
+    print("\033[1;31mFALSE!\033[0m")
+
